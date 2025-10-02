@@ -1,7 +1,10 @@
 package org.acme.rest;
 
+import java.util.Date;
+
 import org.acme.entity.AccessLog;
 
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -15,11 +18,13 @@ public class EchoResource {
     @Path("{value}")
     @Produces(MediaType.TEXT_PLAIN)
     public String echo(@PathParam("value") String value) {
-        saveToDB(value);
-        return value + "..." + value + "..." + value + "..." + value + "... stored to db!";
+        String returnValue = value + "..." + value + "..." + value + "..." + value + "... stored to db!";
+        saveToDB(value, returnValue);
+        return returnValue;
     }
 
-    private void saveToDB(String value) {
+    @Transactional
+    public void saveToDB(String value, String returnValue) {
         AccessLog requestLog = new AccessLog();
         requestLog.timestamp = new Date();
         requestLog.requestValue = value;

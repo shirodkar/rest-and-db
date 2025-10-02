@@ -1,4 +1,4 @@
-package com.shirodkar.servicemeshdemo.entity;
+package org.acme.entity;
 
 import java.util.Date;
 

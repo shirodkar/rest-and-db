@@ -14,7 +14,7 @@ class EchoResourceTest {
           .when().get("/echo/hello")
           .then()
              .statusCode(200)
-             .body(is("hello...hello...hello...hello..."));
+             .body(is("hello...hello...hello...hello... stored to db!"));
     }
 
 }
