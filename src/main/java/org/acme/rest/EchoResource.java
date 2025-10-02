@@ -1,6 +1,6 @@
 package org.acme.rest;
 
-import com.shirodkar.servicemeshdemo.entity.AccessLog;
+import org.acme.entity.AccessLog;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
