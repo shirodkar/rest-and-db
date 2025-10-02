@@ -1,5 +1,7 @@
 package org.acme.rest;
 
+import com.shirodkar.servicemeshdemo.entity.AccessLog;
+
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
