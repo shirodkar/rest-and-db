@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.rest;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -13,6 +13,15 @@ public class EchoResource {
     @Path("{value}")
     @Produces(MediaType.TEXT_PLAIN)
     public String echo(@PathParam("value") String value) {
+        saveToDB(value);
         return value + "..." + value + "..." + value + "..." + value + "...";
+    }
+
+    private void saveToDB(String value) {
+        AccessLog requestLog = new AccessLog();
+        requestLog.timestamp = new Date();
+        requestLog.requestValue = value;
+        requestLog.responseValue = returnValue;
+        requestLog.persist();
     }
 }
