@@ -18,7 +18,7 @@ public class EchoResource {
     @Path("{value}")
     @Produces(MediaType.TEXT_PLAIN)
     public String echo(@PathParam("value") String value) {
-        String returnValue = value + "..." + value + "..." + value + "..." + value + "... stored to db!";
+        String returnValue = value + "..." + value + "..." + value + "..." + value + "... stored in db!";
         saveToDB(value, returnValue);
         return returnValue;
     }
