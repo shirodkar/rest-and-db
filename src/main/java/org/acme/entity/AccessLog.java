@@ -11,9 +11,6 @@ import jakarta.persistence.Entity;
 @Entity
 public class AccessLog extends PanacheEntity {
 
-    @Generated(value="1")
-    public Long id;
-
     public String requestValue;
 
     public String responseValue;
