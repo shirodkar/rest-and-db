@@ -2,7 +2,7 @@
 
 A simple microservice with a REST interface, and backend integration with a Database.
 The REST interface (/echo/{value}) accepts a value which is echoed back in the response.
-The access log of every interaction with the REST interface is stored in the database.
+The access log of every interaction with the REST interface is stored in the database (```accesslog``` table).
 
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
