@@ -16,4 +16,8 @@ public class AccessLog extends PanacheEntity {
     public String responseValue;
 
     public Date timestamp;
+
+    public static void deleteAll() {
+        deleteAll();
+    }
 }

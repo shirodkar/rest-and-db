@@ -11,16 +11,22 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/echo")
+@Path("")
 public class EchoResource {
 
     @GET
-    @Path("{value}")
+    @Path("echo/{value}")
     @Produces(MediaType.TEXT_PLAIN)
     public String echo(@PathParam("value") String value) {
         String returnValue = value + "..." + value + "..." + value + "..." + value + "... stored in db!";
         saveToDB(value, returnValue);
         return returnValue;
+    }
+
+    @GET
+    @Path("clean")
+    public void cleanUpDB() {
+        AccessLog.deleteAll();
     }
 
     @Transactional
