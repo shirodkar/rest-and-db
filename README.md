@@ -6,7 +6,6 @@ The REST interface (```/echo/{value}```) accepts a String ```value``` which is e
 The access log of every interaction with the REST interface is stored in the database (```ACCESSLOG``` table).
 
 
-
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
