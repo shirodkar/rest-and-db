@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.MediaType;
 public class EchoResource {
 
     @GET
-    @Path("echo/{value}")
+    @Path("/echo/{value}")
     @Produces(MediaType.TEXT_PLAIN)
     public String echo(@PathParam("value") String value) {
         String returnValue = value + "..." + value + "..." + value + "..." + value + "... stored in db!";
@@ -25,6 +25,7 @@ public class EchoResource {
 
     @GET
     @Path("clean")
+    @Transactional
     public void cleanUpDB() {
         AccessLog.deleteAll();
     }

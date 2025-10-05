@@ -17,7 +17,4 @@ public class AccessLog extends PanacheEntity {
 
     public Date timestamp;
 
-    public static void deleteAll() {
-        deleteAll();
-    }
 }

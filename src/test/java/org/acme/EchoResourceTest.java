@@ -17,4 +17,11 @@ class EchoResourceTest {
              .body(is("hello...hello...hello...hello... stored in db!"));
     }
 
+    @Test
+    void testCleanUpDBEndpoint() {
+        given()
+          .when().get("/clean")
+          .then()
+             .statusCode(204);
+    }
 }
